@@ -47,6 +47,8 @@
     nums is sorted in non-decreasing order.
  */
 
+// ! Approch 1
+
 /**
  * @param {number[]} nums
  * @return {number}
@@ -57,8 +59,20 @@ var removeDuplicates = function (nums) {
   nums.forEach((num, i) => {
     nums[i] = uniqueSet[i] ?? "-";
   });
-  console.log(uniqueSet);
-  console.log(nums);
+  return uniqueSet.length;
 };
 
-removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]);
+// ! Approch 2
+
+var removeDuplicates2 = function (nums) {
+  let i = 0;
+  for (let j = 0; j < nums.length; j++) {
+    if (nums[i] !== nums[j]) {
+      i++;
+      nums[i] = nums[j];
+    }
+  }
+  return i + 1;
+};
+
+removeDuplicates2([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]);
