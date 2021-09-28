@@ -66,3 +66,17 @@ const plusOne = (digits) => {
 
 const digits = [9, 9, 9];
 console.log(plusOne(digits));
+
+/**
+ * An alternate approach to solve above problem by using BigInt to convert a long string into number.
+ * paserInt only supports less than (2^53 - 1) and more than -( (2^53 - 1))
+ * @param [number] digits
+ * @returns [number]
+ */
+const plusOneAlternate = (digits) => {
+  const str = digits.join().replaceAll(",", "");
+  const number = BigInt(str) + 1n;
+  const arr = number.toString().split("");
+  const arr2 = arr.map((n) => parseInt(n));
+  return arr2;
+};
