@@ -75,7 +75,7 @@ console.log(plusOne(digits));
  */
 const plusOneAlternate = (digits) => {
   const str = digits.join().replaceAll(",", "");
-  const number = BigInt(str) + 1n;
+  const number = BigInt(str) + 1;
   const arr = number.toString().split("");
   const arr2 = arr.map((n) => parseInt(n));
   return arr2;
