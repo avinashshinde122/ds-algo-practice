@@ -64,6 +64,5 @@ const removeElement = (nums,val) =>{
 
 const nums = [0,1,2,2,3,0,4,2]; 
 const val = 2;
-console.log(nums)
 console.log(removeElement(nums,val));
 console.log(nums)
